@@ -1,0 +1,240 @@
+<html><head>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="initial-scale=1.0, width=device-width">
+	<title>Which character from "The Magicians" are you?</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Special+Elite" rel="stylesheet"> 
+	<!-- change font -->
+	<link rel="stylesheet" href="normalize.css"> 
+ 	<link rel="stylesheet" href="master.css">
+</head>
+<body>
+	<div id="wrapper">
+	    <div id="banner">
+	    	<h1>The Magicians</h1>
+	    	<h3>Enter your name and birthdate to see which character and zodiac sign you are!</h3>
+	    </div>
+	    <div id="static-container">
+			<div id="magician-container">
+				<div id="penny-button">
+					<picture>
+						<img src="images/penny.jpg" alt="Penny">
+					</picture>	
+				</div>
+				<div id="julia-button">
+					<picture>
+						<img src="image/julia.jpg" alt="Julia">
+					</picture>	
+				</div>
+				<div id="eliot-button">
+					<picture>
+						<img src="image/eliot.jpg" alt="Eliot">
+					</picture>	
+				</div>
+				<div id="josh-button">
+					<picture>
+						<img src="image/josh-small.jpg" alt="Josh">
+					</picture>	
+				</div>
+				<div id="martin-button">
+					<picture>
+						<img src="image/martin.jpg" alt="Martin">
+					</picture>	
+				</div>
+				<div id="quentin-button">
+					<picture>
+						<img src="image/quentin.jpg" alt="Quentin">
+					</picture>	
+				</div>
+				<div id="margo-button">
+					<picture>
+						<img src="image/margo.jpg" alt="Margo">
+					</picture>	
+				</div>
+				<div id="ember-button">
+					<picture>
+						<img src="image/ember.jpg" alt="Ember">
+					</picture>	
+				</div>
+				<div id="fogg-button">
+					<picture>
+						<img src="image/fogg.jpg" alt="Fogg">
+					</picture>	
+				</div>
+				<div id="jane-button">
+					<picture>
+						<img src="image/jane.jpg" alt="Jane">
+					</picture>	
+				</div>
+				<div id="umber-button">
+					<picture>
+						<img src="image/umber.jpg" alt="Umber">
+					</picture>	
+				</div>
+				<div id="alice-button">
+					<picture>
+						<img src="image/alice.jpg" alt="Alice">
+					</picture>	
+				</div>
+			</div>
+			<div id="info-container">
+				<form onsubmit="return calZodiac();">
+				    <p>
+					    <input id="firstname" name="firstname" type="text" placeholder="First Name" required="">
+					</p>
+					<p>
+					    <input id="lastname" name="lastname" type="text" placeholder="Last Name" required="">
+					</p>
+				    <p>
+				      	<input id="birthday" name="birthday" type="date" placeholder="MM/DD/YYYY"required="">
+				    </p>
+				    <p>
+				        <input type="submit" id="submit-button">
+				    </p>
+				</form>
+			</div>
+			<div id="results-container">
+				<div class="magician-card" id="placeholder">
+	    			<img src="img/placeholder-large.jpg" alt="Creepy Michael Scott">
+	    		</div> <!--change this maybe?-->
+				<div class="magician-card">
+					<div class="magician-card-exit">Exit</div>
+			    	<picture>
+						<img src="image/result-penny.jpg" alt="Penny">
+					</picture>
+					<div class="magician-card-info">
+					   	<h1>William 'Penny' Adiyodi</h1>
+					   	<p>You're a free spirit who doesn't like to be tied down. When you put your mind to it, you can accomplish anything. You pretend like you don't care about anyone, but in reality you care the most.</p>
+					</div> <!--HERE-->
+				</div>
+				<div class="magician-card">
+					<div class="magician-card-exit">EXIT</div>
+			    	<picture>
+						<img src="image/result-julia.jpg" alt="Julia Wicker">
+					</picture>
+					<div class="magician-card-info">
+						<h1>Julia Wicker</h1>
+						<p>You are down-to-earth and humorous. You are the type of person who can walk into a room and make friends with anyone. You don't take your work too seriously, but you are extremely competent. You are the jokester among your friends, and your sense of sarcasm is unrivaled.</p>
+					</div>
+			    </div>
+			    <div class="magician-card">
+			    	<div class="magician-card-exit">EXIT</div>
+			    	<picture>
+						<img src="image/result-eliot.jpg" alt="Eliot Waugh">
+					</picture>
+					<div class="magician-card-info">
+						<h1>Eliot Waugh</h1>
+						<p>You have a high-achieving personality. Your work is your life, and career progression is your central focus. You have a wide range of skills and interests. Sometimes you are a little too domineering for the rest of your coworkers, but there's no argument against you being the best.</p>
+					</div>
+			    </div>
+			    <div class="magician-card">
+			    	<div class="magician-card-exit">EXIT</div>
+			    	<picture>
+						<img src="image/result-josh.jpg" alt="Josh Hoberman">
+					</picture>
+					<div class="magician-card-info">
+						<h1>Josh Hoberman</h1>
+						<p>You are friendly and creative. You are a sensitive person who lives their life according to their ideals. Most of the time, you wish that you could live your life following your passions, like being a musician or a writer. People find your idealism attractive.</p>
+					</div>
+			    </div>
+			    <div class="magician-card">
+			    	<div class="magician-card-exit">EXIT</div>
+			    	<picture>
+						<img src="image/result-martin.jpg" alt="Martin Chatwin">
+					</picture>
+					<div class="magician-card-info">
+						<h1>Martin Chatwin 'The Beast'</h1>
+						<p>You are a highly motivated individual. There's a certain "go-getter" attitude about you that makes all of your goals achievable. You aim to please everyone you meet. You are nostalgic for the past, and are proud of where you've come in your life.</p>
+					</div>
+			    </div>
+			    <div class="magician-card">
+			    	<div class="magician-card-exit">EXIT</div>
+			    	<picture>
+						<img src="image/result-quentin.jpg" alt="Quentin Coldwater">
+					</picture>
+					<div class="magician-card-info">
+						<h1>Quentin Coldwater</h1>
+						<p>You are an entrepreneur in every facet of your life. You are constantly being struck with new ideas. That applies to your personality, as well. You enjoy trying new lifestyles consistently, whether that's a hard-working business executive or a socialite.</p>
+					</div>
+			    </div>
+			    <div class="magician-card">
+			    	<div class="magician-card-exit">EXIT</div>
+			    	<picture>
+						<img src="img/result-margo.jpg" alt="Margo Hanson">
+					</picture>
+					<div class="magician-card-info">
+						<h1>Janet 'Margo' Hanson</h1>
+						<p>You don't take no for an answer. You're strong willed and take responsibility for your mistakes.</p>
+					</div>
+			    </div>
+			    <div class="magician-card">
+			    	<div class="magician-card-exit">EXIT</div>
+			    	<picture>
+						<img src="image/result-ember.jpg" alt="Ember">
+					</picture>
+					<div class="magician-card-info">
+						<h1>Ember</h1>
+						<p>You are entertained by the drama around you, sometimes you even add to it. </p>
+					</div>
+			    </div>
+			    <div class="magician-card">
+			    	<div class="magician-card-exit">EXIT</div>
+			    	<picture>
+						<img src="image/result-fogg.jpg" alt="Dean Fogg">
+					</picture>
+					<div class="magician-card-info">
+						<h1>Dean Fogg</h1>
+						<p>You are a highly energetic individual. You are extremely extroverted and are willing to talk to anyone. You can go through a whole day smiling. Your interests are kind of superficial, but this doesn't bother you one bit. You dominate conversations, but your positivity is infectious.</p>
+					</div>
+			    </div>
+			    <div class="magician-card">
+			    	<div class="magician-card-exit">EXIT</div>
+			    	<picture>
+						<source media="(min-width: 72.5rem)" srcset="img/result-erin.jpg">
+						<img src="image/result-jane.jpg" alt="Jane Chatwin">
+					</picture>
+					<div class="magician-card-info">
+						<h1>Jane Chatwin</h1>
+						<p>You are energetic and popular. You are constantly looking to make sure that everyone in the room is happy. You take responsibility of the "spirit" of the place you spend most, whether that is an office or a school. Sometimes you can seem a little narrow-minded.</p>
+					</div>
+			    </div>
+			    <div class="magician-card">
+			    	<div class="magician-card-exit">EXIT</div>
+			    	<picture>
+						<img src="img/result-umber.jpg" alt="Umber">
+					</picture>
+					<div class="magician-card-info">
+						<h1>Umber</h1>
+						<p>You are always positive and see the glass as half-full. You love to build things with your hands. You care about others opinions since you always want to grow and improve.</p>
+					</div>
+			    </div>
+			    <div class="magician-card">
+			    	<div class="magician-card-exit">EXIT</div>
+			    	<picture>
+						<img src="img/result-alice.jpg" alt="Alice Quinn">
+					</picture>
+					<div class="magician-card-info">
+						<h1>Alice Quinn</h1>
+						<p>You are an incredibly directed and confident person. You know what you want, and get it at all costs. You have unorthodox ways of accomplishing these, and are somewhat vague to others. However, you command respect whereever you go.</p>
+					</div>
+		    	</div>
+		    </div>	
+		</div>
+	</div>
+
+	<audio class="sound" id="penny-audio" src="audio/penny.mp3"></audio>
+ 	<audio class="sound" id="eliot-audio" src="audio/eliot.mp3"></audio>
+ 	<audio class="sound" id="julia-audio" src="audio/julia.mp3"></audio>
+ 	<audio class="sound" id="josh-audio" src="audio/josh.mp3"></audio>
+ 	<audio class="sound" id="martin-audio" src="audio/martin.mp3"></audio>
+ 	<audio class="sound" id="quentin-audio" src="audio/quentin.mp3"></audio>
+ 	<audio class="sound" id="margo-audio" src="audio/margo.mp3"></audio>
+ 	<audio class="sound" id="ember-audio" src="audio/ember.mp3"></audio>
+ 	<audio class="sound" id="fogg-audio" src="audio/fogg.mp3"></audio>
+ 	<audio class="sound" id="jane-audio" src="audio/jane.mp3"></audio>
+ 	<audio class="sound" id="umber-audio" src="audio/umber.mp3"></audio>
+ 	<audio class="sound" id="alice-audio" src="audio/alice.mp3"></audio>
+
+  	<script src="main.js"></script>
+   
+
+</body></html>
