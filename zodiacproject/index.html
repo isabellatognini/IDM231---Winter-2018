@@ -2,7 +2,7 @@
 	<meta charset="UTF-8">
   	<meta name="viewport" content="initial-scale=1.0, width=device-width">
 	<title>Which character from "The Magicians" are you?</title> 
-	<!-- change font -->
+	<!-- change font, fancier -->
 	<link rel="stylesheet" href="normalize.css"> 
  	<link rel="stylesheet" href="master.css">
 </head>
@@ -12,14 +12,31 @@
 	    	<h1>The Magicians</h1>
 	    	<h3>Enter your name and birthdate to see which character and zodiac sign you are!</h3>
 	    </div>
+
 	    <div id="static-container">
+	    	<div id="info-container">
+				<form onsubmit="return calZodiac();">
+				    <p>
+					    <input id="firstname" name="firstname" type="text" placeholder="First Name" required="">
+					</p>
+					<p>
+					    <input id="lastname" name="lastname" type="text" placeholder="Last Name" required="">
+					</p>
+				    <p>
+				      	<input id="birthday" name="birthday" type="date" placeholder="MM/DD/YYYY" required="">
+				    </p>
+				    <p>
+				        <input type="submit" id="submit-button">
+				    </p>
+				</form>
+			</div>
 			<div id="magician-container">
 				<div id="penny-button">
 					<picture>
 						<img src="images/penny.jpg" alt="Penny">
 					</picture>	
 				</div>
-				<div id="julia-button">
+				<!-- <div id="julia-button">
 					<picture>
 						<img src="images/julia.jpg" alt="Julia">
 					</picture>	
@@ -73,148 +90,129 @@
 					<picture>
 						<img src="images/alice.jpg" alt="Alice">
 					</picture>	
-				</div>
-			</div>
-			<div id="info-container">
-				<form onsubmit="return calZodiac();">
-				    <p>
-					    <input id="firstname" name="firstname" type="text" placeholder="First Name" required="">
-					</p>
-					<p>
-					    <input id="lastname" name="lastname" type="text" placeholder="Last Name" required="">
-					</p>
-				    <p>
-				      	<input id="birthday" name="birthday" type="date" placeholder="MM/DD/YYYY"required="">
-				    </p>
-				    <p>
-				        <input type="submit" id="submit-button">
-				    </p>
-				</form>
+				</div> -->
 			</div>
 			<div id="results-container">
-				<div class="magician-card" id="placeholder">
-	    			<img src="img/placeholder-large.jpg" alt="The magicians">
-	    		</div> <!--change this maybe?-->
-				<div class="magician-card">
-					<div class="magician-card-exit">Exit</div>
+				<div class="magician-card" id="magician-penny" hidden>
+					<div class="magician-card-exit">X</div>
 			    	<picture>
 						<img src="images/result-penny.jpg" alt="Penny">
 					</picture>
 					<div class="magician-card-info">
 					   	<h1>William 'Penny' Adiyodi</h1>
 					   	<p>You're a free spirit who doesn't like to be tied down. When you put your mind to it, you can accomplish anything. You pretend like you don't care about anyone, but in reality you care the most.</p>
-					</div> <!--HERE-->
+					</div> 
 				</div>
-				<div class="magician-card">
-					<div class="magician-card-exit">EXIT</div>
+			<!-- 	<div class="magician-card">
+					<div class="magician-card-exit">X</div>
 			    	<picture>
 						<img src="images/result-julia.jpg" alt="Julia Wicker">
 					</picture>
 					<div class="magician-card-info">
 						<h1>Julia Wicker</h1>
-						<p>You are down-to-earth and humorous. You are the type of person who can walk into a room and make friends with anyone. You don't take your work too seriously, but you are extremely competent. You are the jokester among your friends, and your sense of sarcasm is unrivaled.</p>
+						<p>You have many gifts, all of which you don't like to boast about. You're humble, but also like to take things into your own hands, which can sometimes get you into trouble. You don't like rejection. If you don't get the one thing you care about the most you will do almost anything to get it.</p>
 					</div>
 			    </div>
 			    <div class="magician-card">
-			    	<div class="magician-card-exit">EXIT</div>
+			    	<div class="magician-card-exit">X</div>
 			    	<picture>
 						<img src="images/result-eliot.jpg" alt="Eliot Waugh">
 					</picture>
 					<div class="magician-card-info">
 						<h1>Eliot Waugh</h1>
-						<p>You have a high-achieving personality. Your work is your life, and career progression is your central focus. You have a wide range of skills and interests. Sometimes you are a little too domineering for the rest of your coworkers, but there's no argument against you being the best.</p>
+						<p>You're a partier and always ready to toast in the company of friends. While you're with people all the time, you find yourself feeling lonely a lot. It takes a while for people to get to know you, but when they get to know you, you're inseperable. You'd do just about anything for your freinds. Everyone treats you as royalty, as they should.</p>
 					</div>
 			    </div>
 			    <div class="magician-card">
-			    	<div class="magician-card-exit">EXIT</div>
+			    	<div class="magician-card-exit">X</div>
 			    	<picture>
 						<img src="images/result-josh.jpg" alt="Josh Hoberman">
 					</picture>
 					<div class="magician-card-info">
 						<h1>Josh Hoberman</h1>
-						<p>You are friendly and creative. You are a sensitive person who lives their life according to their ideals. Most of the time, you wish that you could live your life following your passions, like being a musician or a writer. People find your idealism attractive.</p>
+						<p>You don't like to follow the rules and you love adventure. You're very talented and you know it. You could turn into a bird or make a rose bloom. You get along with everyone. </p>
 					</div>
 			    </div>
 			    <div class="magician-card">
-			    	<div class="magician-card-exit">EXIT</div>
+			    	<div class="magician-card-exit">X</div>
 			    	<picture>
 						<img src="images/result-martin.jpg" alt="Martin Chatwin">
 					</picture>
 					<div class="magician-card-info">
 						<h1>Martin Chatwin 'The Beast'</h1>
-						<p>You are a highly motivated individual. There's a certain "go-getter" attitude about you that makes all of your goals achievable. You aim to please everyone you meet. You are nostalgic for the past, and are proud of where you've come in your life.</p>
+						<p>You tend to be an introvert and don't have many close friends. It's easy for you to become entranced about a subject and you'll spend your whole life trying to learn new things. You get bored with every day things and tend to go off the beaten path, which might get you in trouble.</p>
 					</div>
 			    </div>
 			    <div class="magician-card">
-			    	<div class="magician-card-exit">EXIT</div>
+			    	<div class="magician-card-exit">X</div>
 			    	<picture>
 						<img src="images/result-quentin.jpg" alt="Quentin Coldwater">
 					</picture>
 					<div class="magician-card-info">
 						<h1>Quentin Coldwater</h1>
-						<p>You are an entrepreneur in every facet of your life. You are constantly being struck with new ideas. That applies to your personality, as well. You enjoy trying new lifestyles consistently, whether that's a hard-working business executive or a socialite.</p>
+						<p>You're intelligent, driven, and melancholic. You're introverted but very driven to learn new things. You're low self esteem sometimes holds you back. You like to talk to others, but you they tend to have a hard time connecting with  you. </p>
 					</div>
 			    </div>
 			    <div class="magician-card">
-			    	<div class="magician-card-exit">EXIT</div>
+			    	<div class="magician-card-exit">X</div>
 			    	<picture>
-						<img src="imgs/result-margo.jpg" alt="Margo Hanson">
+						<img src="images/result-margo.jpg" alt="Margo Hanson">
 					</picture>
 					<div class="magician-card-info">
 						<h1>Janet 'Margo' Hanson</h1>
-						<p>You don't take no for an answer. You're strong willed and take responsibility for your mistakes.</p>
+						<p>You don't take no for an answer. You're strong willed and take responsibility for your mistakes. You tend to indulge in gossip and competition. Some people don't like that about you, but they don't see your keen eye and attention to detail. When sometime has to get done, you put your emotions last and do what's best for everyone. You're a quick-thinker and get the job done.</p>
 					</div>
 			    </div>
 			    <div class="magician-card">
-			    	<div class="magician-card-exit">EXIT</div>
+			    	<div class="magician-card-exit">X</div>
 			    	<picture>
 						<img src="images/result-ember.jpg" alt="Ember">
 					</picture>
 					<div class="magician-card-info">
 						<h1>Ember</h1>
-						<p>You are entertained by the drama around you, sometimes you even add to it. </p>
+						<p>You are entertained by the drama around you, sometimes you even add to it. You're always happy, unless someone betrays you. You get bored very easily. You can sometimes be overbaring which makes it hard for peopel to get to know you.</p>
 					</div>
 			    </div>
 			    <div class="magician-card">
-			    	<div class="magician-card-exit">EXIT</div>
+			    	<div class="magician-card-exit">X</div>
 			    	<picture>
 						<img src="images/result-fogg.jpg" alt="Dean Fogg">
 					</picture>
 					<div class="magician-card-info">
 						<h1>Dean Fogg</h1>
-						<p>You are a highly energetic individual. You are extremely extroverted and are willing to talk to anyone. You can go through a whole day smiling. Your interests are kind of superficial, but this doesn't bother you one bit. You dominate conversations, but your positivity is infectious.</p>
+						<p>You tend to be in the position of power. You have a strong passion for teaching others and helping them grow. You're efficient and always know when to intervene. </p>
 					</div>
 			    </div>
 			    <div class="magician-card">
-			    	<div class="magician-card-exit">EXIT</div>
+			    	<div class="magician-card-exit">X</div>
 			    	<picture>
 						<img src="images/result-jane.jpg" alt="Jane Chatwin">
 					</picture>
 					<div class="magician-card-info">
 						<h1>Jane Chatwin</h1>
-						<p>You are energetic and popular. You are constantly looking to make sure that everyone in the room is happy. You take responsibility of the "spirit" of the place you spend most, whether that is an office or a school. Sometimes you can seem a little narrow-minded.</p>
+						<p>You are an observer. You stick to yourself and only intervene when you have to. You're knowledgeable and very powerful. You're clever and know how to get yourself out of diffult situations.</p>
 					</div>
 			    </div>
 			    <div class="magician-card">
-			    	<div class="magician-card-exit">EXIT</div>
+			    	<div class="magician-card-exit">X</div>
 			    	<picture>
 						<img src="images/result-umber.jpg" alt="Umber">
 					</picture>
 					<div class="magician-card-info">
 						<h1>Umber</h1>
-						<p>You are always positive and see the glass as half-full. You love to build things with your hands. You care about others opinions since you always want to grow and improve.</p>
+						<p>You are always positive and see the glass as half-full. You love to build things with your hands. You care about others opinions since you always want to grow and improve. You care most about law and order, you don't know how to deal with chaos. </p>
 					</div>
 			    </div>
 			    <div class="magician-card">
-			    	<div class="magician-card-exit">EXIT</div>
+			    	<div class="magician-card-exit">X</div>
 			    	<picture>
-						<img src="imgages/result-alice.jpg" alt="Alice Quinn">
+						<img src="images/result-alice.jpg" alt="Alice Quinn">
 					</picture>
 					<div class="magician-card-info">
 						<h1>Alice Quinn</h1>
-						<p>You are an incredibly directed and confident person. You know what you want, and get it at all costs. You have unorthodox ways of accomplishing these, and are somewhat vague to others. However, you command respect whereever you go.</p>
+						<p>You are very quiet and tend to be on your own. You care a lot about your studies and always being #1 in your class. It's easy for people to make you mad or annoyed. You can be reckless, which sometimes effects the others around you. You're very driven and care about your loved ones.</p>
 					</div>
-		    	</div>
+		    	</div> -->
 		    </div>	
 		</div>
 	</div>
