@@ -87,7 +87,7 @@ h1 {
 	background-color: pink;
 }
 
-#magician-container {
+/*#magician-container {
 	width: 100%;
 	max-width: 18rem;
 	margin: 2rem auto;
@@ -95,11 +95,15 @@ h1 {
 	flex-flow: row wrap;
 	justify-content: center;
 	align-content: center;
+}*/
+
+#magician-container {
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
 }
 
-#magician-container div {
-	margin: 10px;
-}
 
 #magician-container img {
 	border-radius: 30%;
@@ -141,15 +145,15 @@ h1 {
 }*/
 
 .magician-card {
-	width: 70%;
-	height: 70%;
+	width: 60%;
+	height: 60%;
 	z-index: 5;
 	text-align: center;
 	position: fixed;
 	background: white;
 	top: 20%;
 	left: 20%;
-
+	display: none;
 }
 
 .magician-card-exit {
@@ -159,13 +163,12 @@ h1 {
 	cursor: pointer;
 }
 
-.magician-card picture {
-	margin: 0 auto;
-}
 
 .magician-card img {
 	border-radius: 50%;
 	border: 0.1rem solid pink;
+	margin: 20px auto;
+
 }
 
 .magician-card-info {

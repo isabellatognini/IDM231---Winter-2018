@@ -3,7 +3,6 @@
   	<meta name="viewport" content="initial-scale=1.0, width=device-width">
 	<title>Which character from "The Magicians" are you?</title> 
 	<!-- change font, fancier -->
-	<link rel="stylesheet" href="normalize.css"> 
  	<link rel="stylesheet" href="master.css">
 </head>
 <body>
@@ -14,6 +13,7 @@
 	    </div>
 
 	    <div id="static-container">
+	    	<!--info form, user enters their info here-->
 	    	<div id="info-container">
 				<form onsubmit="return calZodiac();">
 				    <p>
@@ -30,12 +30,32 @@
 				    </p>
 				</form>
 			</div>
+
+			<!--Buttons, change made based on Phil's example in class--> 
 			<div id="magician-container">
-				<div id="penny-button">
+				<a href="#magician"><img src="images/penny.jpg" alt="Penny" id="penny-button"></a>
+				<a href="#magician"><img src="images/julia.jpg" alt="Julia" id="julia-button"></a>
+				<a href="#magician"><img src="images/eliot.jpg" alt="Eliot" id="eliot-button"></a>
+				<a href="#magician"><img src="images/josh.jpg" alt="Josh" id="josh-button"></a>
+				<a href="#magician"><img src="images/martin.jpg" alt="Martin" id="martin-button"></a>
+				<a href="#magician"><img src="images/quentin.jpg" alt="Quentin" id="quentin-button"></a>
+			</div>	
+
+			<div id="magician-container">
+				<a href="#magician"><img src="images/margo.jpg" alt="Margo" id="margo-button"></a>
+				<a href="#magician"><img src="images/ember.jpg" alt="Ember" id="ember-button"></a>
+				<a href="#magician"><img src="images/fogg.jpg" alt="Fogg" id="fogg-button"></a>
+				<a href="#magician"><img src="images/jane.jpg" alt="Jane" id="jane-button"></a>
+				<a href="#magician"><img src="images/umber.jpg" alt="Umber" id="umber-button"></a>
+				<a href="#magician"><img src="images/alice.jpg" alt="Alice" id="alice-button"></a>
+			</div>
+
+				
+				<!-- <div id="penny-button">
 					<picture>
 						<img src="images/penny.jpg" alt="Penny">
 					</picture>	
-				</div>
+				</div> -->
 				<!-- <div id="julia-button">
 					<picture>
 						<img src="images/julia.jpg" alt="Julia">
@@ -93,17 +113,17 @@
 				</div> -->
 			</div>
 			<div id="results-container">
-				<div class="magician-card" id="magician-penny" hidden>
+				<div class="magician-card" id="magician-penny">
 					<div class="magician-card-exit">X</div>
 			    	<picture>
 						<img src="images/result-penny.jpg" alt="Penny">
 					</picture>
 					<div class="magician-card-info">
-					   	<h1>William 'Penny' Adiyodi</h1>
+					   	<h1> Penny Adiyodi</h1>
 					   	<p>You're a free spirit who doesn't like to be tied down. When you put your mind to it, you can accomplish anything. You pretend like you don't care about anyone, but in reality you care the most.</p>
 					</div> 
 				</div>
-			<!-- 	<div class="magician-card">
+				<div class="magician-card">
 					<div class="magician-card-exit">X</div>
 			    	<picture>
 						<img src="images/result-julia.jpg" alt="Julia Wicker">
@@ -139,7 +159,7 @@
 						<img src="images/result-martin.jpg" alt="Martin Chatwin">
 					</picture>
 					<div class="magician-card-info">
-						<h1>Martin Chatwin 'The Beast'</h1>
+						<h1>Martin Chatwin</h1>
 						<p>You tend to be an introvert and don't have many close friends. It's easy for you to become entranced about a subject and you'll spend your whole life trying to learn new things. You get bored with every day things and tend to go off the beaten path, which might get you in trouble.</p>
 					</div>
 			    </div>
@@ -159,7 +179,7 @@
 						<img src="images/result-margo.jpg" alt="Margo Hanson">
 					</picture>
 					<div class="magician-card-info">
-						<h1>Janet 'Margo' Hanson</h1>
+						<h1>Margo Hanson</h1>
 						<p>You don't take no for an answer. You're strong willed and take responsibility for your mistakes. You tend to indulge in gossip and competition. Some people don't like that about you, but they don't see your keen eye and attention to detail. When sometime has to get done, you put your emotions last and do what's best for everyone. You're a quick-thinker and get the job done.</p>
 					</div>
 			    </div>
@@ -212,11 +232,12 @@
 						<h1>Alice Quinn</h1>
 						<p>You are very quiet and tend to be on your own. You care a lot about your studies and always being #1 in your class. It's easy for people to make you mad or annoyed. You can be reckless, which sometimes effects the others around you. You're very driven and care about your loved ones.</p>
 					</div>
-		    	</div> -->
+		    	</div>
 		    </div>	
 		</div>
 	</div>
 
+	<!--All auto when character is selected--> 
 	<audio class="sound" id="penny-audio" src="audio/penny.mp3"></audio>
  	<audio class="sound" id="eliot-audio" src="audio/eliot.mp3"></audio>
  	<audio class="sound" id="julia-audio" src="audio/julia.mp3"></audio>
@@ -229,6 +250,8 @@
  	<audio class="sound" id="jane-audio" src="audio/jane.mp3"></audio>
  	<audio class="sound" id="umber-audio" src="audio/umber.mp3"></audio>
  	<audio class="sound" id="alice-audio" src="audio/alice.mp3"></audio>
+
+
 
   	<script src="main.js"></script>
    
