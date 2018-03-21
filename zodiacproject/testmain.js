@@ -177,7 +177,9 @@ stopAllAudio();
 	if (sign === 'cap') {
 	document.getElementById('magician-penny').hidden=false;
 	document.getElementById('overlay').hidden=false;
-	} document.getElementById('penny-audio').play();
+	document.getElementById('penny-audio').play();
+	} 
+	
 	else if (sign === 'sag') {
 	document.getElementById('magician-julia').hidden=false;
 	document.getElementById('overlay').hidden=false;
