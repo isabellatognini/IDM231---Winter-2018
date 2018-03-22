@@ -4,160 +4,101 @@
 	<meta charset="UTF-8">
   	<meta name="viewport" content="initial-scale=1.0, width=device-width">
 	<title>Which character from "The Magicians" are you?</title> 
-	<!-- change font, fancier -->
- 	<link rel="stylesheet" href="master.css">
+	<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative:700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link rel="stylesheet" href="master.css">
+
 </head>
+
 <body>
 	<div id="wrapper">
-	    <div id="banner">
+
+		<div id="banner">
 	    	<h1>The Magicians</h1>
-	    	<h3>Enter your name and birthdate to see which character and zodiac sign you are!</h3>
+	    	<h3>Enter your name and birthdate to see which character you are!</h3>
 	    </div>
 
-	    <div id="static-container">
-	    	<!--info form, user enters their info here-->
-	    	<div id="info-container">
-				<form onsubmit="return calZodiac();">
-				    <p>
-					    <input id="firstname" name="firstname" type="text" placeholder="First Name" required="">
-					</p>
-					<p>
-					    <input id="lastname" name="lastname" type="text" placeholder="Last Name" required="">
-					</p>
-				    <p>
-				      	<input id="birthday" name="birthday" type="date" placeholder="MM/DD/YYYY" required="">
-				    </p>
-				    <p>
-				        <input type="submit" id="submit-button">
-				    </p>
-				</form>
+	<div id="static-container">
+
+		<div id="info-container">
+			<form class="form" action="test.html" id="dateForm" method="post" name="dateForm">
+				<p> <input id="fullname" name="fullname" type="text" placeholder="Full Name" required="">
+				</p>
+				<p> <input id="birthday" name="birthday" type="date" placeholder="MM/DD/YYYY" required="">
+				</p>
+				<p class="feedback" id="feedback" hidden>Please enter a VALID date</p>
+				<p> <input type="submit" value="Submit" id="submit">
+				</p>
+			</form>
+		</div>
+		<div id="help">
+			<div id="helphidden"> 
+				<p> Need help? Gladly... </p>
+				<p>Just enter your name and your birthdate into the form and we'll generate a character from The Magicians that matches your zodiac sign.</p>
+				<p> You can also click through characters to learn more about them!</p>
+			</div>	
+			<img src="images/help.png">
+		</div>
+
+	    <div id="magician-container">
+			<a class="magician" href="#magician-penny"><img src="images/penny.jpg" alt="Penny" id="penny-button"></a>
+			<a class="magician" href="#magician-julia"><img src="images/julia.jpg" alt="Julia" id="julia-button"></a>
+			<a class="magician" href="#magician-eliot"><img src="images/eliot.jpg" alt="Eliot" id="eliot-button"></a>
+			<a class="magician" href="#magician-josh"><img src="images/josh.jpg" alt="Josh" id="josh-button"></a>
+			<a class="magician" href="#magician-martin"><img src="images/martin.jpg" alt="Martin" id="martin-button"></a>
+			<a class="magician" href="#magician-quentin"><img src="images/quentin.jpg" alt="Quentin" id="quentin-button"></a>
+			<a class="magician" href="#magician-margo"><img src="images/margo.jpg" alt="Margo" id="margo-button"></a>
+			<a class="magician" href="#magician-ember" ><img src="images/ember.jpg" alt="Ember" id="ember-button"></a>
+			<a class="magician" href="#magician-fogg"><img src="images/fogg.jpg" alt="Fogg" id="fogg-button"></a>
+			<a class="magician" href="#magician-jane"><img src="images/jane.jpg" alt="Jane" id="jane-button"></a>
+			<a class="magician" href="#magician-umber"><img src="images/umber.jpg" alt="Umber" id="umber-button"></a>
+			<a class="magician" href="#magician-alice"><img src="images/alice.jpg" alt="Alice" id="alice-button"></a>
+		</div>
+	</div>
+	
+	<div class="overlay" id="overlay" hidden> </div>
+
+	<div id="results-container">
+
+			<div class="magician-card" id="magician-penny" hidden>
+				<button class="magician-card-exit">X</button>
+			    <picture><img src="images/result-penny.jpg" alt="Penny"> </picture>
+				<div class="magician-card-info">
+					<h1> Penny Adiyodi</h1>
+					<p>You're a free spirit who doesn't like to be tied down. When you put your mind to it, you can accomplish anything. You pretend like you don't care about anyone, but in reality you care the most. You're very straight forward and sometimes people see you as a little mean. Remember that not everyone thinks the way you do, try to understand where they are coming from.</p>
+				</div> 
 			</div>
 
-			<!--Buttons, change made based on Phil's example in class--> 
-			<div id="magician-container">
-				<a href="#magician"><img src="images/penny.jpg" alt="Penny" id="penny-button"></a>
-				<a href="#magician"><img src="images/julia.jpg" alt="Julia" id="julia-button"></a>
-				<a href="#magician"><img src="images/eliot.jpg" alt="Eliot" id="eliot-button"></a>
-				<a href="#magician"><img src="images/josh.jpg" alt="Josh" id="josh-button"></a>
-				<a href="#magician"><img src="images/martin.jpg" alt="Martin" id="martin-button"></a>
-				<a href="#magician"><img src="images/quentin.jpg" alt="Quentin" id="quentin-button"></a>
+			<div class="magician-card" id="magician-julia" hidden>
+				<button class="magician-card-exit">X</button>
+			    <picture><img src="images/result-julia.jpg" alt="Julia Wicker"> </picture>
+				<div class="magician-card-info">
+					<h1>Julia Wicker</h1>
+					<p>You have many gifts, all of which you don't like to boast about. You're humble, but also like to take things into your own hands, which can sometimes get you into trouble. You don't like rejection. If you don't get the one thing you care about the most you will do almost anything to get it.</p>
+				</div>
 			</div>	
 
-			<div id="magician-container">
-				<a href="#magician"><img src="images/margo.jpg" alt="Margo" id="margo-button"></a>
-				<a href="#magician"><img src="images/ember.jpg" alt="Ember" id="ember-button"></a>
-				<a href="#magician"><img src="images/fogg.jpg" alt="Fogg" id="fogg-button"></a>
-				<a href="#magician"><img src="images/jane.jpg" alt="Jane" id="jane-button"></a>
-				<a href="#magician"><img src="images/umber.jpg" alt="Umber" id="umber-button"></a>
-				<a href="#magician"><img src="images/alice.jpg" alt="Alice" id="alice-button"></a>
+			<div class="magician-card" id="magician-eliot" hidden>
+			    <button class="magician-card-exit">X</button>
+			    <picture><img src="images/result-eliot.jpg" alt="Eliot Waugh"></picture>
+				<div class="magician-card-info">
+					<h1>Eliot Waugh</h1>
+					<p>You're a partier and always ready to toast in the company of friends. While you're with people all the time, you find yourself feeling lonely a lot. It takes a while for people to get to know you, but when they get to know you, you're inseperable. You'd do just about anything for your freinds. Everyone treats you as royalty, as they should.</p>
+				</div>
 			</div>
 
-				
-				<!-- <div id="penny-button">
-					<picture>
-						<img src="images/penny.jpg" alt="Penny">
-					</picture>	
-				</div> -->
-				<!-- <div id="julia-button">
-					<picture>
-						<img src="images/julia.jpg" alt="Julia">
-					</picture>	
-				</div> 
-				<div id="eliot-button">
-					<picture>
-						<img src="images/eliot.jpg" alt="Eliot">
-					</picture>	
-				</div>
-				<div id="josh-button">
-					<picture>
-						<img src="images/josh.jpg" alt="Josh">
-					</picture>	
-				</div>
-				<div id="martin-button">
-					<picture>
-						<img src="images/martin.jpg" alt="Martin">
-					</picture>	
-				</div>
-				<div id="quentin-button">
-					<picture>
-						<img src="images/quentin.jpg" alt="Quentin">
-					</picture>	
-				</div>
-				<div id="margo-button">
-					<picture>
-						<img src="images/margo.jpg" alt="Margo">
-					</picture>	
-				</div>
-				<div id="ember-button">
-					<picture>
-						<img src="images/ember.jpg" alt="Ember">
-					</picture>	
-				</div>
-				<div id="fogg-button">
-					<picture>
-						<img src="images/fogg.jpg" alt="Fogg">
-					</picture>	
-				</div>
-				<div id="jane-button">
-					<picture>
-						<img src="images/jane.jpg" alt="Jane">
-					</picture>	
-				</div>
-				<div id="umber-button">
-					<picture>
-						<img src="images/umber.jpg" alt="Umber">
-					</picture>	
-				</div>
-				<div id="alice-button">
-					<picture>
-						<img src="images/alice.jpg" alt="Alice">
-					</picture>	
-				</div> -->
-			</div>
-			<div class="overlay" if="overlay" hidden> </div>
-			<div id="results-container">
-				<div class="magician-card" id="magician-penny">
-					<div class="magician-card-exit">X</div>
-			    	<picture>
-						<img src="images/result-penny.jpg" alt="Penny">
-					</picture>
-					<div class="magician-card-info">
-					   	<h1> Penny Adiyodi</h1>
-					   	<p>You're a free spirit who doesn't like to be tied down. When you put your mind to it, you can accomplish anything. You pretend like you don't care about anyone, but in reality you care the most.</p>
-					</div> 
-				</div>
-				<div class="magician-card">
-					<div class="magician-card-exit">X</div>
-			    	<picture>
-						<img src="images/result-julia.jpg" alt="Julia Wicker">
-					</picture>
-					<div class="magician-card-info">
-						<h1>Julia Wicker</h1>
-						<p>You have many gifts, all of which you don't like to boast about. You're humble, but also like to take things into your own hands, which can sometimes get you into trouble. You don't like rejection. If you don't get the one thing you care about the most you will do almost anything to get it.</p>
-					</div>
-			    </div>
-			    <div class="magician-card">
-			    	<div class="magician-card-exit">X</div>
-			    	<picture>
-						<img src="images/result-eliot.jpg" alt="Eliot Waugh">
-					</picture>
-					<div class="magician-card-info">
-						<h1>Eliot Waugh</h1>
-						<p>You're a partier and always ready to toast in the company of friends. While you're with people all the time, you find yourself feeling lonely a lot. It takes a while for people to get to know you, but when they get to know you, you're inseperable. You'd do just about anything for your freinds. Everyone treats you as royalty, as they should.</p>
-					</div>
-			    </div>
-			    <div class="magician-card">
-			    	<div class="magician-card-exit">X</div>
+			    <div class="magician-card" id="magician-josh" hidden>
+			    	<button class="magician-card-exit">X</button>
 			    	<picture>
 						<img src="images/result-josh.jpg" alt="Josh Hoberman">
 					</picture>
 					<div class="magician-card-info">
 						<h1>Josh Hoberman</h1>
-						<p>You don't like to follow the rules and you love adventure. You're very talented and you know it. You could turn into a bird or make a rose bloom. You get along with everyone. </p>
+						<p>You don't like to follow the rules and you love adventure. You're very talented and you know it. You could turn into a bird or make a rose bloom. You get along with everyone. Partying is your number one activity, but sometimes people can see you as just the partier so make sure you have more thoughful interactions with your friends.</p>
 					</div>
 			    </div>
-			    <div class="magician-card">
-			    	<div class="magician-card-exit">X</div>
+			    <div class="magician-card" id="magician-martin" hidden>
+			    	<button class="magician-card-exit">X</button>
 			    	<picture>
 						<img src="images/result-martin.jpg" alt="Martin Chatwin">
 					</picture>
@@ -166,8 +107,8 @@
 						<p>You tend to be an introvert and don't have many close friends. It's easy for you to become entranced about a subject and you'll spend your whole life trying to learn new things. You get bored with every day things and tend to go off the beaten path, which might get you in trouble.</p>
 					</div>
 			    </div>
-			    <div class="magician-card">
-			    	<div class="magician-card-exit">X</div>
+			    <div class="magician-card" id="magician-quentin" hidden>
+			    	<button class="magician-card-exit">X</button>
 			    	<picture>
 						<img src="images/result-quentin.jpg" alt="Quentin Coldwater">
 					</picture>
@@ -176,8 +117,8 @@
 						<p>You're intelligent, driven, and melancholic. You're introverted but very driven to learn new things. You're low self esteem sometimes holds you back. You like to talk to others, but you they tend to have a hard time connecting with  you. </p>
 					</div>
 			    </div>
-			    <div class="magician-card">
-			    	<div class="magician-card-exit">X</div>
+			    <div class="magician-card" id="magician-margo" hidden>
+			    	<button class="magician-card-exit">X</button>
 			    	<picture>
 						<img src="images/result-margo.jpg" alt="Margo Hanson">
 					</picture>
@@ -186,77 +127,75 @@
 						<p>You don't take no for an answer. You're strong willed and take responsibility for your mistakes. You tend to indulge in gossip and competition. Some people don't like that about you, but they don't see your keen eye and attention to detail. When sometime has to get done, you put your emotions last and do what's best for everyone. You're a quick-thinker and get the job done.</p>
 					</div>
 			    </div>
-			    <div class="magician-card">
-			    	<div class="magician-card-exit">X</div>
+			    <div class="magician-card" id="magician-ember" hidden>
+			    	<button class="magician-card-exit">X</button>
 			    	<picture>
 						<img src="images/result-ember.jpg" alt="Ember">
 					</picture>
 					<div class="magician-card-info">
 						<h1>Ember</h1>
-						<p>You are entertained by the drama around you, sometimes you even add to it. You're always happy, unless someone betrays you. You get bored very easily. You can sometimes be overbaring which makes it hard for peopel to get to know you.</p>
+						<p>You are entertained by the drama around you, sometimes you even add to it. You're always happy, unless someone betrays you. You get bored very easily. You can sometimes be overbaring which makes it hard for people to get to know you.</p>
 					</div>
 			    </div>
-			    <div class="magician-card">
-			    	<div class="magician-card-exit">X</div>
+			    <div class="magician-card" id="magician-fogg" hidden>
+			    	<button class="magician-card-exit">X</button>
 			    	<picture>
 						<img src="images/result-fogg.jpg" alt="Dean Fogg">
 					</picture>
 					<div class="magician-card-info">
 						<h1>Dean Fogg</h1>
-						<p>You tend to be in the position of power. You have a strong passion for teaching others and helping them grow. You're efficient and always know when to intervene. </p>
+						<p>You tend to be in the position of power. You have a strong passion for teaching others and helping them grow. You're efficient and always know when to intervene. You usually know what's best, but remember to not keep too much from your friends, because they always find out.</p>
 					</div>
 			    </div>
-			    <div class="magician-card">
-			    	<div class="magician-card-exit">X</div>
+			    <div class="magician-card" id="magician-jane" hidden>
+			    	<button class="magician-card-exit">X</button>
 			    	<picture>
 						<img src="images/result-jane.jpg" alt="Jane Chatwin">
 					</picture>
 					<div class="magician-card-info">
 						<h1>Jane Chatwin</h1>
-						<p>You are an observer. You stick to yourself and only intervene when you have to. You're knowledgeable and very powerful. You're clever and know how to get yourself out of diffult situations.</p>
+						<p>You are an observer. You stick to yourself and only intervene when you have to. You're knowledgeable and very powerful. You're clever and know how to get yourself out of diffult situations. Everyone looks to you for help, but remember not to spread yourself too thin.</p>
 					</div>
 			    </div>
-			    <div class="magician-card">
-			    	<div class="magician-card-exit">X</div>
+			    <div class="magician-card" id="magician-umber" hidden>
+			    	<button class="magician-card-exit">X</button>
 			    	<picture>
 						<img src="images/result-umber.jpg" alt="Umber">
 					</picture>
 					<div class="magician-card-info">
 						<h1>Umber</h1>
-						<p>You are always positive and see the glass as half-full. You love to build things with your hands. You care about others opinions since you always want to grow and improve. You care most about law and order, you don't know how to deal with chaos. </p>
+						<p>You are always positive and see the glass as half-full. You love to build things with your hands. You care about others opinions since you always want to grow and improve. You care most about law and order, you don't know how to deal with chaos. Try not to run away at the first sighte of danger, face your fears!</p>
 					</div>
 			    </div>
-			    <div class="magician-card">
-			    	<div class="magician-card-exit">X</div>
+			    <div class="magician-card" id="magician-alice" hidden>
+			    	<button class="magician-card-exit">X</button>
 			    	<picture>
 						<img src="images/result-alice.jpg" alt="Alice Quinn">
 					</picture>
 					<div class="magician-card-info">
 						<h1>Alice Quinn</h1>
-						<p>You are very quiet and tend to be on your own. You care a lot about your studies and always being #1 in your class. It's easy for people to make you mad or annoyed. You can be reckless, which sometimes effects the others around you. You're very driven and care about your loved ones.</p>
+						<p>You are very quiet and tend to be on your own. You care a lot about your studies and always being #1 in your class. It's easy for people to make you mad or annoyed. You can be reckless, which sometimes effects the others around you. You're very driven and care about your loved ones. Remember to let people in a bit more, because they really do care about you. </p>
 					</div>
 		    	</div>
 		    </div>	
 		</div>
 	</div>
 
-	<!--All auto when character is selected--> 
-	<audio class="sound" id="penny-audio" src="audio/penny.mp3"></audio>
- 	<audio class="sound" id="eliot-audio" src="audio/eliot.mp3"></audio>
- 	<audio class="sound" id="julia-audio" src="audio/julia.mp3"></audio>
- 	<audio class="sound" id="josh-audio" src="audio/josh.mp3"></audio>
- 	<audio class="sound" id="martin-audio" src="audio/martin.mp3"></audio>
- 	<audio class="sound" id="quentin-audio" src="audio/quentin.mp3"></audio>
- 	<audio class="sound" id="margo-audio" src="audio/margo.mp3"></audio>
- 	<audio class="sound" id="ember-audio" src="audio/ember.mp3"></audio>
- 	<audio class="sound" id="fogg-audio" src="audio/fogg.mp3"></audio>
- 	<audio class="sound" id="jane-audio" src="audio/jane.mp3"></audio>
- 	<audio class="sound" id="umber-audio" src="audio/umber.mp3"></audio>
- 	<audio class="sound" id="alice-audio" src="audio/alice.mp3"></audio>
+<audio class="sound" id="penny-audio" src="audio/penny.mp3"></audio>
+<audio class="sound" id="eliot-audio" src="audio/eliot.mp3"></audio>
+<audio class="sound" id="julia-audio" src="audio/julia.mp3"></audio>
+<audio class="sound" id="josh-audio" src="audio/josh.mp3"></audio>
+<audio class="sound" id="martin-audio" src="audio/martin.mp3"></audio>
+<audio class="sound" id="quentin-audio" src="audio/quentin.mp3"></audio>
+<audio class="sound" id="margo-audio" src="audio/margo.mp3"></audio>
+<audio class="sound" id="ember-audio" src="audio/ember.mp3"></audio>
+<audio class="sound" id="fogg-audio" src="audio/fogg.mp3"></audio>
+<audio class="sound" id="jane-audio" src="audio/jane.mp3"></audio>
+<audio class="sound" id="umber-audio" src="audio/umber.mp3"></audio>
+<audio class="sound" id="alice-audio" src="audio/alice.mp3"></audio>	
+
+<script src="main.js"></script>
+</body> 
 
 
-
-  	<script src="main.js"></script>
-   
-
-</body></html>
+</html>
