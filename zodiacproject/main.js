@@ -87,11 +87,6 @@ for (var i = 0; i < closeButtons.length; i++) {
 	closeButtons[i].addEventListener('click', closeSign, true);
 }
 
-//...................
-//AUDIO FUNCTIONALITY
-//...................
-//make sure to only play current sound, played once. Stop playing when closed and repeated once
-
 
 //..................
 //FORM FUNCTIONALITY
@@ -170,7 +165,10 @@ function assignMagician(month, day){
 	return AstroSign;
 }
 
-//display magician
+//........................................
+//DISPLAY MAGICIAN AND AUDIO FUNCTIONALITY
+//........................................
+
 function displayMagician(sign){
 stopAllAudio();
 
